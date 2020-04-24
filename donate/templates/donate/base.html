@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Home{% endblock %}</title>
+
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Economica&display=swap" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'donate/style.css' %}"/>
+    <!-- Latest compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script async src="https://cse.google.com/cse.js?cx=010795098091594622132:sk6vx1kkg44"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <!--Header-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'donate:index' %}">GetNews</a>
+            </div>
+
+
+            <!-- Items -->
+
+            <div class="collapse navbar-collapse" id="topNavBar">
+                <ul class="nav navbar-nav">
+
+
+                    <li class="">
+                        <a href="{% url 'donate:index' %}">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp; Home
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="{% url 'donate:detail' %}"> <!-- takes us to this url -->
+                            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>&nbsp; Donate
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="{% url 'donate:index' %}">
+                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp; News
+
+                        </a>
+
+                    </li>
+
+
+
+                </ul>
+
+
+
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <div class="buscar-caja">
+
+
+                        <div class="gcse-searchbox-only"></div>
+
+                    </div>
+
+
+                    <!--<form class="navbar-form navbar-right" action="/search.html">
+                            <input type="text" class="form-control" name="q" value="">
+                            <div class="gcse-searchbox-only"></div>
+                        <button type="submit" class="btn btn-default">Search</button>
+                    </form>-->
+
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+
+
+
+</body>
+</html>
